@@ -1,0 +1,97 @@
+<header class="topbar">
+  <div class="page-width">
+    <h1>Mini biblioteka</h1>
+    <p>Jednostavna evidencija knjiga</p>
+  </div>
+</header>
+
+<main class="page-width">
+  <section class="form-section">
+    <h2>Dodaj knjigu</h2>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="title">Naziv knjige</label>
+        <input
+          id="title"
+          type="text"
+          [(ngModel)]="title"
+          placeholder="Unesi naziv">
+      </div>
+
+      <div class="field">
+        <label for="author">Autor</label>
+        <input
+          id="author"
+          type="text"
+          [(ngModel)]="author"
+          placeholder="Unesi autora">
+      </div>
+
+      <div class="field small-field">
+        <label for="genre">Žanr</label>
+        <select id="genre" [(ngModel)]="genre">
+          <option>Roman</option>
+          <option>Drama</option>
+          <option>Poezija</option>
+          <option>Stručna literatura</option>
+          <option>Ostalo</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="add-button" (click)="addBook()">Dodaj</button>
+  </section>
+
+  <section class="list-section">
+    <div class="list-header">
+      <h2>Spisak knjiga</h2>
+
+      <input
+        class="search"
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Pretraži po nazivu ili autoru">
+    </div>
+
+    <p class="info">Ukupno knjiga: {{ books.length }}</p>
+
+    <div class="table-wrapper" *ngIf="filteredBooks.length > 0; else emptyList">
+      <table>
+        <thead>
+          <tr>
+            <th>Naziv</th>
+            <th>Autor</th>
+            <th>Žanr</th>
+            <th>Status</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of filteredBooks">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.genre }}</td>
+            <td>
+              <span [class.read-status]="book.read">
+                {{ book.read ? 'Pročitana' : 'Nije pročitana' }}
+              </span>
+            </td>
+            <td class="actions">
+              <button class="status-button" (click)="toggleRead(book)">
+                {{ book.read ? 'Vrati status' : 'Označi kao pročitanu' }}
+              </button>
+              <button class="delete-button" (click)="deleteBook(book.id)">Obriši</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #emptyList>
+      <p class="empty">Nema knjiga za prikaz.</p>
+    </ng-template>
+  </section>
+</main>
+
+

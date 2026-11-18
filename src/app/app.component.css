@@ -1,0 +1,201 @@
+.topbar {
+  background: #2f5d7c;
+  color: white;
+  padding: 18px 0;
+  border-bottom: 4px solid #24485f;
+}
+
+.page-width {
+  width: 90%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.topbar p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+main {
+  padding: 28px 0 40px;
+}
+
+section {
+  background: white;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.field {
+  flex: 1;
+}
+
+.small-field {
+  max-width: 220px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  border: 1px solid #aaaaaa;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #b7cedd;
+  border-color: #2f5d7c;
+}
+
+button {
+  border: 1px solid #888888;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: #f3f3f3;
+}
+
+button:hover {
+  background: #e5e5e5;
+}
+
+.add-button {
+  margin-top: 16px;
+  background: #2f5d7c;
+  color: white;
+  border-color: #2f5d7c;
+  min-width: 100px;
+}
+
+.add-button:hover {
+  background: #24485f;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.list-header h2 {
+  margin-bottom: 0;
+}
+
+.search {
+  width: 310px;
+}
+
+.info {
+  font-size: 14px;
+  color: #555555;
+  margin: 18px 0 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  border: 1px solid #c8c8c8;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #e8edf0;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.read-status {
+  color: #236b2d;
+  font-weight: bold;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.status-button {
+  margin-right: 6px;
+}
+
+.delete-button {
+  color: #8b1e1e;
+}
+
+.empty {
+  border: 1px dashed #aaaaaa;
+  padding: 18px;
+  text-align: center;
+  color: #666666;
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+  color: #666666;
+}
+
+@media (max-width: 750px) {
+  .form-row,
+  .list-header {
+    display: block;
+  }
+
+  .field,
+  .small-field {
+    max-width: none;
+    margin-bottom: 12px;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .actions button {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+  }
+}
